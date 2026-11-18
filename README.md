@@ -21,6 +21,8 @@ For every host:
 - **problems that aren't errors yet**: lifetime over 398 days (browsers reject those), RSA under 2048, SHA-1 signatures, TLS 1.0/1.1 negotiated, no SAN extension
 - issuer, key type (RSA 2048 / EC P-256), TLS version, SAN list
 
+The last 120 days of results are kept on the [`history` branch](../../tree/history) (`history.json`), so main only holds code.
+
 The page sorts by urgency and has a 90-day timeline at the top, so you see what's coming at a glance.
 
 The `canaries` group points at [badssl.com](https://badssl.com)'s deliberately broken hosts, so there's always proof the failure states render. They're excluded from the alert issue.
