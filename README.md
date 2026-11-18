@@ -69,7 +69,7 @@ Exit code is 1 if anything needs attention, so it works in cron or another CI to
 ```
 cron 06:17 UTC ─► check all hosts (16 at a time)
                  ├─► site/index.html + status.json ─► GitHub Pages
-                 ├─► data/history.json (committed back, last 120 days)
+                 ├─► history.json on the `history` branch (last 120 days, keeps main clean)
                  └─► issue.md? ─► open or update the "certwatch" issue
                      nothing wrong? ─► close it with a comment
 ```
