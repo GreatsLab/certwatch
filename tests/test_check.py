@@ -53,5 +53,5 @@ def test_page_renders(servers):
     rs = [run(servers, n).to_dict() for n in ("valid", "expiring", "expired", "wronghost")]
     rs.append(check("127.0.0.1", 1, timeout=1).to_dict())
     page = render(rs, dt.datetime.now(dt.timezone.utc))
-    assert "4 certificates need attention." in page
+    assert "4 sites need attention." in page
     assert page.count("<tr class=") == 5

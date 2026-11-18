@@ -1,0 +1,39 @@
+# Sites checked every day by .github/workflows/check.yml
+# Add a host to a group and push - it shows up on the page after the next run.
+
+settings:
+  warn_days: 30
+  crit_days: 14
+
+groups:
+  mine:
+    - auroxhost.com
+    - www.auroxhost.com
+
+  nigerian-fintech:
+    - paystack.com
+    - flutterwave.com
+    - moniepoint.com
+    - kuda.com
+    - opayweb.com
+
+  nigerian-services:
+    - jumia.com.ng
+    - nairaland.com
+    - konga.com
+    - cbn.gov.ng
+    - jamb.gov.ng
+    - nimc.gov.ng
+
+  reference:
+    - github.com
+    - cloudflare.com
+
+  # known-broken on purpose (badssl.com), proves the alerting works
+  canaries:
+    - host: expired.badssl.com
+      note: should always show Expired
+    - host: wrong.host.badssl.com
+      note: should always show Not trusted
+    - host: self-signed.badssl.com
+      note: should always show Not trusted

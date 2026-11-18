@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "certwatch"
+version = "0.2.0"
+description = "Daily TLS certificate expiry checks on GitHub Actions with a status page and issue alerts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Chimnadindu Chibueze"}]
+dependencies = ["cryptography>=42", "PyYAML>=6"]
+
+[project.scripts]
+certwatch = "certwatch.__main__:main"
+
+[tool.setuptools]
+packages = ["certwatch"]

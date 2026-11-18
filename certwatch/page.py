@@ -57,8 +57,9 @@ def render(results: list, now: dt.datetime, repo: str = "") -> str:
     for r in results:
         counts[r["status"]] = counts.get(r["status"], 0) + 1
     bad = sum(counts.get(k, 0) for k in ("error", "expired", "invalid", "expiring"))
+    # "sites", not "certificates": an unreachable host has no certificate to count
     headline = "All certificates are fine." if not bad else (
-        f"{bad} certificate{'s' if bad > 1 else ''} need{'s' if bad == 1 else ''} attention.")
+        f"{bad} site{'s' if bad > 1 else ''} need{'s' if bad == 1 else ''} attention.")
 
     rows = []
     for r in results:
@@ -73,7 +74,7 @@ def render(results: list, now: dt.datetime, repo: str = "") -> str:
       <div class="sub">{_e(sans)}</div></td>
   <td><span class="pill">{LABEL[r['status']]}</span>{f'<div class="err">{_e(detail)}</div>' if detail else ''}{f'<ul class="notes">{notes}</ul>' if notes else ''}</td>
   <td>{_e(r['issuer'])}<div class="sub">{_e(r['key'])} {_e(r['tls_version'])}</div></td>
-  <td>{_date(r['not_after'])}</td>
+  <td class="date">{_date(r['not_after'])}</td>
 </tr>""")
 
     repo_link = f' <a href="https://github.com/{_e(repo)}">Source and domain list</a>.' if repo else ""
@@ -103,6 +104,7 @@ th {{ text-align:left; font-size:13px; color:var(--ink2); font-weight:600; paddi
 td {{ padding:14px 12px; border-bottom:1px solid var(--rule); vertical-align:top; }}
 td.days {{ font-size:30px; font-weight:800; line-height:1; width:84px; text-align:right; }}
 td.days span {{ display:block; font-size:12px; font-weight:400; color:var(--ink2); margin-top:4px; }}
+.date {{ white-space:nowrap; }}
 .host {{ color:var(--ink); font-weight:600; text-decoration:none; }} .host:hover {{ text-decoration:underline; }}
 .sub {{ color:var(--ink2); font-size:13px; margin-top:2px; word-break:break-word; }}
 .pill {{ display:inline-block; font-size:13px; font-weight:600; padding:2px 8px; border-radius:3px; background:#1B7F5A1A; color:var(--ok); }}
