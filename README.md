@@ -55,6 +55,8 @@ python -m certwatch --host github.com --host expired.badssl.com
 python -m certwatch domains.yml -o site/        # writes site/index.html + status.json
 ```
 
+Output looks like this (numbers change daily):
+
 ```
 expired       -4120d  expired.badssl.com     COMODO CA Limited  certificate has expired
 ok              61d  github.com             Sectigo Limited
