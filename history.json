@@ -170,5 +170,48 @@
    "wrong.host.badssl.com": "invalid",
    "self-signed.badssl.com": "invalid"
   }
+ },
+ {
+  "date": "2026-11-22",
+  "days_left": {
+   "auroxhost.com": 79.0,
+   "www.auroxhost.com": 79.0,
+   "paystack.com": 69.2,
+   "flutterwave.com": 66.5,
+   "moniepoint.com": 82.7,
+   "kuda.com": 18.2,
+   "opayweb.com": 138.4,
+   "jumia.com.ng": 80.9,
+   "nairaland.com": 83.0,
+   "konga.com": 72.4,
+   "cbn.gov.ng": 77.8,
+   "jamb.gov.ng": 110.4,
+   "nimc.gov.ng": 98.4,
+   "github.com": 66.4,
+   "cloudflare.com": 71.4,
+   "expired.badssl.com": -4241.6,
+   "wrong.host.badssl.com": 36.2,
+   "self-signed.badssl.com": 725.3
+  },
+  "status": {
+   "auroxhost.com": "ok",
+   "www.auroxhost.com": "ok",
+   "paystack.com": "ok",
+   "flutterwave.com": "ok",
+   "moniepoint.com": "ok",
+   "kuda.com": "warn",
+   "opayweb.com": "ok",
+   "jumia.com.ng": "ok",
+   "nairaland.com": "ok",
+   "konga.com": "ok",
+   "cbn.gov.ng": "ok",
+   "jamb.gov.ng": "ok",
+   "nimc.gov.ng": "ok",
+   "github.com": "ok",
+   "cloudflare.com": "ok",
+   "expired.badssl.com": "expired",
+   "wrong.host.badssl.com": "invalid",
+   "self-signed.badssl.com": "invalid"
+  }
  }
 ]
